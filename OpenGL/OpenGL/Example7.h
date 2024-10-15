@@ -11,5 +11,11 @@ public:
 	virtual void KeyboardFunc(unsigned char key, int X, int Y)override;
 	virtual void Idle()override;
 	void DrawCube2();
+	void DrawCube3Sim();
+	void DrawQuad3index();
+	void DrawSphere2(float radius, int slices, int stacks);
+	void DrawSphereSimple(float radius, int slices, int stacks);
+	void DrawPyramid2();
+	void DrawPyramidSimple();
 };
 
