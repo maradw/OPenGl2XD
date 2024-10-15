@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Archivos de origen">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Archivos de encabezado">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Archivos de recursos">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Example">
+      <UniqueIdentifier>{363ce6a7-18ed-44b1-8592-dfdb682ce1aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Example">
+      <UniqueIdentifier>{dd58ac88-dc41-461c-9c16-c8ff9f00c935}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Utility">
+      <UniqueIdentifier>{70915f7e-fbad-42a4-85b3-34c815d7b616}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Utility">
+      <UniqueIdentifier>{5ad45f35-23d5-4d8b-9f08-cf0ce3ee609e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Punto3D">
+      <UniqueIdentifier>{c839e3e5-7a5a-4788-bd55-4729dbdfe476}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Punto3D">
+      <UniqueIdentifier>{97b1777e-0c92-4419-9027-464ae62927dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Polígono">
+      <UniqueIdentifier>{21ca21d1-846f-4b89-949c-805b28bbb93b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Polígono">
+      <UniqueIdentifier>{c3f3072a-ac3b-4726-8454-a5d47374a65c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Lights">
+      <UniqueIdentifier>{b232e722-61f4-4be5-b1f3-a34607892d55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Lights">
+      <UniqueIdentifier>{fafc2611-d4c7-4494-a30e-bc2bb1613293}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Lights\Types">
+      <UniqueIdentifier>{230143fe-c4c3-4b6c-a4ac-b0ae58963a39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Lights\Types">
+      <UniqueIdentifier>{89d83294-ce4f-4813-b8db-77fe3353ecb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\textures">
+      <UniqueIdentifier>{9eb43c01-cd21-4ebc-8a00-dc0bf64efaf2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Math">
+      <UniqueIdentifier>{0f1e2b13-8e16-48e4-96f7-075d023563df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Math">
+      <UniqueIdentifier>{c08fe313-541b-4d10-b889-8e30e7597451}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\texture">
+      <UniqueIdentifier>{65018b0d-039d-40cf-94c0-d2d98adf103c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Figura">
+      <UniqueIdentifier>{2d4185bc-8752-41fd-ac35-5c178cce0b34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Figura\Figura3D">
+      <UniqueIdentifier>{a56a8ef7-fcd5-43d3-b30c-1cc0c15d3f3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Figura\Figura2D">
+      <UniqueIdentifier>{e130180a-234d-4b8a-917a-92b97b069a7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Figura">
+      <UniqueIdentifier>{325f30dd-8310-49c4-81e6-6297c6e8c336}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Figura\Figura2D">
+      <UniqueIdentifier>{9976b462-ff7c-4f96-8080-63afc54e5596}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Figura\Figura3D">
+      <UniqueIdentifier>{d2eb442c-170e-45fd-a5f9-f058ec919917}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="OpenGL.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Example.cpp">
+      <Filter>Archivos de origen\Example</Filter>
+    </ClCompile>
+    <ClCompile Include="Example1.cpp">
+      <Filter>Archivos de origen\Example</Filter>
+    </ClCompile>
+    <ClCompile Include="Punto3D.cpp">
+      <Filter>Archivos de origen\Punto3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Polígono.cpp">
+      <Filter>Archivos de origen\Polígono</Filter>
+    </ClCompile>
+    <ClCompile Include="Example2.cpp">
+      <Filter>Archivos de origen\Example</Filter>
+    </ClCompile>
+    <ClCompile Include="Example4.cpp">
+      <Filter>Archivos de origen\Example</Filter>
+    </ClCompile>
+    <ClCompile Include="Lights.cpp">
+      <Filter>Archivos de origen\Lights</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectionLight.cpp">
+      <Filter>Archivos de origen\Lights\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="PointLight.cpp">
+      <Filter>Archivos de origen\Lights\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="SpotLight.cpp">
+      <Filter>Archivos de origen\Lights\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="Example5.cpp">
+      <Filter>Archivos de origen\Example</Filter>
+    </ClCompile>
+    <ClCompile Include="Example3.cpp">
+      <Filter>Archivos de origen\Example</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Archivos de origen\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3.cpp">
+      <Filter>Archivos de origen\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="BMPTextureLoader.cpp">
+      <Filter>Archivos de origen\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureLoader.cpp">
+      <Filter>Archivos de origen\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Cuadrado.cpp">
+      <Filter>Archivos de origen\Figura\Figura2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Circulo.cpp">
+      <Filter>Archivos de origen\Figura\Figura2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Cubo.cpp">
+      <Filter>Archivos de origen\Figura\Figura3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Esfera.cpp">
+      <Filter>Archivos de origen\Figura\Figura3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Figura3D.cpp">
+      <Filter>Archivos de origen\Figura\Figura3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Figura2D.cpp">
+      <Filter>Archivos de origen\Figura\Figura2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Triangulo.cpp">
+      <Filter>Archivos de origen\Figura\Figura2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Piramide.cpp">
+      <Filter>Archivos de origen\Figura\Figura3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Figura.cpp">
+      <Filter>Archivos de origen\Figura</Filter>
+    </ClCompile>
+    <ClCompile Include="Example6.cpp">
+      <Filter>Archivos de origen\Example</Filter>
+    </ClCompile>
+    <ClCompile Include="Example7.cpp">
+      <Filter>Archivos de origen\Example</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Example.h">
+      <Filter>Archivos de encabezado\Example</Filter>
+    </ClInclude>
+    <ClInclude Include="Example1.h">
+      <Filter>Archivos de encabezado\Example</Filter>
+    </ClInclude>
+    <ClInclude Include="IncludeGL.h">
+      <Filter>Archivos de encabezado\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Punto3D.h">
+      <Filter>Archivos de encabezado\Punto3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Polígono.h">
+      <Filter>Archivos de encabezado\Polígono</Filter>
+    </ClInclude>
+    <ClInclude Include="Example2.h">
+      <Filter>Archivos de encabezado\Example</Filter>
+    </ClInclude>
+    <ClInclude Include="Example4.h">
+      <Filter>Archivos de encabezado\Example</Filter>
+    </ClInclude>
+    <ClInclude Include="SpotLight.h">
+      <Filter>Archivos de encabezado\Lights\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="PointLight.h">
+      <Filter>Archivos de encabezado\Lights\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectionLight.h">
+      <Filter>Archivos de encabezado\Lights\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Example3.h">
+      <Filter>Archivos de encabezado\Example</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Archivos de encabezado\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Lights.h">
+      <Filter>Archivos de encabezado\Lights\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>Archivos de encabezado\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Example5.h">
+      <Filter>Archivos de encabezado\Example</Filter>
+    </ClInclude>
+    <ClInclude Include="BMPTextureLoader.h">
+      <Filter>Archivos de encabezado\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureLoader.h">
+      <Filter>Archivos de encabezado\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="Figura.h">
+      <Filter>Archivos de encabezado\Figura</Filter>
+    </ClInclude>
+    <ClInclude Include="Figura3D.h">
+      <Filter>Archivos de encabezado\Figura\Figura3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Figura2D.h">
+      <Filter>Archivos de encabezado\Figura\Figura2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Cubo.h">
+      <Filter>Archivos de encabezado\Figura\Figura3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Piramide.h">
+      <Filter>Archivos de encabezado\Figura\Figura3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Triangulo.h">
+      <Filter>Archivos de encabezado\Figura\Figura2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Esfera.h">
+      <Filter>Archivos de encabezado\Figura\Figura3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Cuadrado.h">
+      <Filter>Archivos de encabezado\Figura\Figura2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Circulo.h">
+      <Filter>Archivos de encabezado\Figura\Figura2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Example6.h">
+      <Filter>Archivos de encabezado\Example</Filter>
+    </ClInclude>
+    <ClInclude Include="Example7.h">
+      <Filter>Archivos de encabezado\Example</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="OpenGL.rc">
+      <Filter>Archivos de recursos</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
