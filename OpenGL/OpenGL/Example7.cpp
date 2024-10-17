@@ -23,17 +23,18 @@ void Example7::Render()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 
-    DrawQuad2();
+    //DrawQuad2();
     
 
+    //DrawCube2();
 
 
 
-
-
+   // DrawSphereSimple(1, 8, 8);
    
 
-
+   // DrawPyramid2();
+    DrawPyramidSimple();
 }
 void Example7::DrawCube2()
 {
@@ -79,11 +80,8 @@ void Example7::DrawCube2()
 void Example7::DrawCube3Sim()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
     // Desactivar temporalmente back-face culling para verificar las caras
     glDisable(GL_CULL_FACE);
-
-    // Define vertices of the cube (each triangle is defined separately)
     GLfloat vertices[] = {
         // Front face
         -0.5f, -0.5f,  0.5f, // Triangle 1
@@ -92,7 +90,6 @@ void Example7::DrawCube3Sim()
         -0.5f,  0.5f,  0.5f, // Triangle 2
         -0.5f,  0.5f,  0.5f,
          0.5f,  0.5f,  0.5f,
-
          // Back face
          -0.5f, -0.5f, -0.5f, // Triangle 3
           0.5f, -0.5f, -0.5f,
@@ -100,15 +97,13 @@ void Example7::DrawCube3Sim()
          -0.5f,  0.5f, -0.5f, // Triangle 4
          -0.5f,  0.5f, -0.5f,
           0.5f,  0.5f, -0.5f,
-
-          // Top face (corrected winding order)
+          // Top face 
           -0.5f,  0.5f,  0.5f, // Triangle 5
            0.5f,  0.5f,  0.5f,
           -0.5f,  0.5f, -0.5f,
-           0.5f,  0.5f,  0.5f, // Triangle 6 (order corrected)
+           0.5f,  0.5f,  0.5f, // Triangle 6
            0.5f,  0.5f, -0.5f,
           -0.5f,  0.5f, -0.5f,
-
           // Bottom face
           -0.5f, -0.5f,  0.5f, // Triangle 7
           -0.5f, -0.5f, -0.5f,
@@ -116,29 +111,38 @@ void Example7::DrawCube3Sim()
           -0.5f, -0.5f,  0.5f, // Triangle 8
            0.5f, -0.5f, -0.5f,
            0.5f, -0.5f,  0.5f,
-
            // Right face
-            0.5f, -0.5f, -0.5f, // Triangle 9
-            0.5f, -0.5f,  0.5f,
-            0.5f,  0.5f,  0.5f,
-            0.5f, -0.5f, -0.5f, // Triangle 10
-            0.5f,  0.5f,  0.5f,
-            0.5f,  0.5f, -0.5f,
-
-            // Left face
-            -0.5f, -0.5f, -0.5f, // Triangle 11
-            -0.5f, -0.5f,  0.5f,
-            -0.5f,  0.5f,  0.5f,
-            -0.5f, -0.5f, -0.5f, // Triangle 12
-            -0.5f,  0.5f,  0.5f,
+          0.5f, -0.5f, -0.5f, // Triangle 9
+          0.5f, -0.5f,  0.5f,
+          0.5f,  0.5f,  0.5f,
+          0.5f, -0.5f, -0.5f, // Triangle 10
+          0.5f,  0.5f,  0.5f,
+          0.5f,  0.5f, -0.5f,
+          // Left face
+          -0.5f, -0.5f, -0.5f, // Triangle 11
+          -0.5f, -0.5f,  0.5f,
+          -0.5f,  0.5f,  0.5f,
+          -0.5f, -0.5f, -0.5f, // Triangle 12
+          -0.5f,  0.5f,  0.5f,
             -0.5f,  0.5f, -0.5f,
     };
-
     glEnableClientState(GL_VERTEX_ARRAY);
     glVertexPointer(3, GL_FLOAT, 0, vertices);
     glDrawArrays(GL_TRIANGLES, 0, sizeof(vertices) / sizeof(GLfloat) / 3);
     glDisableClientState(GL_VERTEX_ARRAY);
     glFlush();
+
+    /* // Dibujar múltiples cubos en diferentes posiciones
+    for (int i = 0; i < 4; ++i) {
+    
+        glPushMatrix();
+        glTranslatef(i * 1.5f, 0.0f, 0.0f);  
+        glDrawArrays(GL_TRIANGLES, 0, sizeof(vertices) / sizeof(GLfloat) / 3);
+        glPopMatrix();
+    }
+
+    glDisableClientState(GL_VERTEX_ARRAY);
+    glFlush();*/
 }
 //array simple
 void Example7::DrawQuad2()
@@ -151,11 +155,25 @@ void Example7::DrawQuad2()
         -0.5f,  0.5f  // Vértice superior izquierdo
     };
 
-    glEnableClientState(GL_VERTEX_ARRAY);
+    /*glEnableClientState(GL_VERTEX_ARRAY);
     glVertexPointer(2, GL_FLOAT, 0, quad);
     glDrawArrays(GL_QUADS, 0, 4);
     glDisableClientState(GL_VERTEX_ARRAY);
-    glFlush();
+    glFlush();*/
+
+    glEnableClientState(GL_VERTEX_ARRAY);
+    glVertexPointer(2, GL_FLOAT, 0, quad);
+    for (int i = 0; i < 4; ++i) {
+
+        glPushMatrix();
+        glTranslatef(i * 1.5f, 0.0f, 0.0f);
+        glDrawArrays(GL_QUADS, 0, 4);
+        glPopMatrix();
+    }
+
+    glDisableClientState(GL_VERTEX_ARRAY);
+    glFlush(); 
+
 }
 //array indexado
 void Example7::DrawQuad3index()
@@ -167,23 +185,15 @@ void Example7::DrawQuad3index()
          0.5f,  0.5f, // Vértice superior derecho
         -0.5f,  0.5f  // Vértice superior izquierdo
     };
-
     // Definir los índices para los vértices (2 triángulos que forman el quad)
     GLuint indices[] = {
-        0, 1, 2,  // Primer triángulo
-        2, 3, 0   // Segundo triángulo
+        0, 1, 2,  
+        2, 3, 0   
     };
 
-    // Habilitar el uso del Vertex Array
     glEnableClientState(GL_VERTEX_ARRAY);
-
-    // Definir el puntero al array de vértices
     glVertexPointer(2, GL_FLOAT, 0, vertices);
-
-    // Dibujar el quad usando los índices
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, indices);
-
-    // Deshabilitar el uso del Vertex Array
     glDisableClientState(GL_VERTEX_ARRAY);
 
     glFlush();
@@ -293,12 +303,22 @@ void Example7::DrawSphereSimple(float radius, int slices, int stacks)
         }
     }
 
-    // Configuración de los arreglos de vértices
+    /*glEnableClientState(GL_VERTEX_ARRAY);
+    glVertexPointer(3, GL_FLOAT, 0, vertices.data());
+    glDrawArrays(GL_TRIANGLES, 0, vertices.size() / 3);
+
+    glDisableClientState(GL_VERTEX_ARRAY);
+    glFlush();
+*/
     glEnableClientState(GL_VERTEX_ARRAY);
     glVertexPointer(3, GL_FLOAT, 0, vertices.data());
+    for (int i = 0; i < 4; ++i) {
 
-    // Dibujo de los vértices como triángulos
-    glDrawArrays(GL_TRIANGLES, 0, vertices.size() / 3);
+        glPushMatrix();
+        glTranslatef(i * 2.5f, 0.0f, 0.0f);
+        glDrawArrays(GL_TRIANGLES, 0, vertices.size() / 3);
+        glPopMatrix();
+    }
 
     glDisableClientState(GL_VERTEX_ARRAY);
     glFlush();
@@ -345,43 +365,57 @@ void Example7::DrawPyramidSimple()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    // Definir vértices de la pirámide directamente en el orden correcto (sin índices)
     GLfloat vertices[] = {
-        // Cara frontal (triángulo)
-        -0.5f, 0.0f, -0.5f,  // Vértice inferior izquierdo
-         0.5f, 0.0f, -0.5f,  // Vértice inferior derecho
-         0.0f, 1.0f,  0.0f,  // Vértice superior
+       
+        -0.5f, 0.0f, -0.5f, 
+         0.5f, 0.0f, -0.5f, 
+         0.0f, 1.0f,  0.0f, 
 
         // Cara derecha (triángulo)
-         0.5f, 0.0f, -0.5f,  // Vértice inferior derecho
-         0.5f, 0.0f,  0.5f,  // Vértice superior derecho
-         0.0f, 1.0f,  0.0f,  // Vértice superior
+         0.5f, 0.0f, -0.5f, 
+         0.5f, 0.0f,  0.5f, 
+         0.0f, 1.0f,  0.0f, 
 
         // Cara trasera (triángulo)
-         0.5f, 0.0f,  0.5f,  // Vértice superior derecho
-        -0.5f, 0.0f,  0.5f,  // Vértice superior izquierdo
-         0.0f, 1.0f,  0.0f,  // Vértice superior
+         0.5f, 0.0f,  0.5f,  
+        -0.5f, 0.0f,  0.5f,  
+         0.0f, 1.0f,  0.0f,  
 
         // Cara izquierda (triángulo)
-        -0.5f, 0.0f,  0.5f,  // Vértice superior izquierdo
-        -0.5f, 0.0f, -0.5f,  // Vértice inferior izquierdo
-         0.0f, 1.0f,  0.0f,  // Vértice superior
+        -0.5f, 0.0f,  0.5f,  
+        -0.5f, 0.0f, -0.5f,  
+         0.0f, 1.0f,  0.0f,  
 
         // Base (dos triángulos)
-        -0.5f, 0.0f, -0.5f,  // Vértice inferior izquierdo
-         0.5f, 0.0f, -0.5f,  // Vértice inferior derecho
-         0.5f, 0.0f,  0.5f,  // Vértice superior derecho
+        -0.5f, 0.0f, -0.5f, 
+         0.5f, 0.0f, -0.5f, 
+         0.5f, 0.0f,  0.5f, 
 
-         0.5f, 0.0f,  0.5f,  // Vértice superior derecho
-        -0.5f, 0.0f,  0.5f,  // Vértice superior izquierdo
-        -0.5f, 0.0f, -0.5f   // Vértice inferior izquierdo
+         0.5f, 0.0f,  0.5f, 
+        -0.5f, 0.0f,  0.5f, 
+        -0.5f, 0.0f, -0.5f  
     };
 
-    glEnableClientState(GL_VERTEX_ARRAY);
+    /*glEnableClientState(GL_VERTEX_ARRAY);
     glVertexPointer(3, GL_FLOAT, 0, vertices);
     glDrawArrays(GL_TRIANGLES, 0, 18); // 18 vértices (6 triángulos, cada uno con 3 vértices)
     glDisableClientState(GL_VERTEX_ARRAY);
+    glFlush();*/
+
+
+    glEnableClientState(GL_VERTEX_ARRAY);
+    glVertexPointer(3, GL_FLOAT, 0, vertices);
+    for (int i = 0; i < 4; ++i) {
+
+        glPushMatrix();
+        glTranslatef(i * 2.5f, 0.0f, 0.0f);
+        glDrawArrays(GL_TRIANGLES, 0, 18);
+        glPopMatrix();
+    }
+
+    glDisableClientState(GL_VERTEX_ARRAY);
     glFlush();
+
 }
 //array instanced
 
@@ -413,17 +447,126 @@ void Example7::DrawPyramidSimple()
         2, 3, 0
     };
     glEnableClientState(GL_VERTEX_ARRAY);
-
-    // Especificar el puntero al array de vértices
     glVertexPointer(3, GL_FLOAT, 0, vertices);
-
-    // Dibujar la pirámide utilizando instancias
     glDrawElementsInstanced(GL_TRIANGLES, sizeof(indices) / sizeof(GLuint), GL_UNSIGNED_INT, indices, instances);
-
-    // Deshabilitar el uso de arrays de vértices
     glDisableClientState(GL_VERTEX_ARRAY);
     glutSwapBuffers();
 
+}*/
+
+
+/*void Example7::DrawCubeInstance(float instances)
+{
+    // Vértices del cubo (8 vértices, cada uno con 3 componentes: x, y, z)
+    GLfloat vertices[] = {
+        // Cara frontal
+        -0.5f, -0.5f,  0.5f,  // Vértice 0
+         0.5f, -0.5f,  0.5f,  // Vértice 1
+         0.5f,  0.5f,  0.5f,  // Vértice 2
+        -0.5f,  0.5f,  0.5f,  // Vértice 3
+        // Cara trasera
+        -0.5f, -0.5f, -0.5f,  // Vértice 4
+         0.5f, -0.5f, -0.5f,  // Vértice 5
+         0.5f,  0.5f, -0.5f,  // Vértice 6
+        -0.5f,  0.5f, -0.5f   // Vértice 7
+    };
+
+    // Índices para definir las caras del cubo (12 triángulos, 6 caras)
+    GLuint indices[] = {
+        // Cara frontal
+        0, 1, 2, 2, 3, 0,
+        // Cara trasera
+        4, 5, 6, 6, 7, 4,
+        // Cara superior
+        3, 2, 6, 6, 7, 3,
+        // Cara inferior
+        0, 1, 5, 5, 4, 0,
+        // Cara derecha
+        1, 5, 6, 6, 2, 1,
+        // Cara izquierda
+        0, 4, 7, 7, 3, 0
+    };
+
+    glEnableClientState(GL_VERTEX_ARRAY);
+    glVertexPointer(3, GL_FLOAT, 0, vertices);
+    glDrawElementsInstanced(GL_TRIANGLES, sizeof(indices) / sizeof(GLuint), GL_UNSIGNED_INT, indices, instances);
+    glDisableClientState(GL_VERTEX_ARRAY);
+    glutSwapBuffers();
+}
+*
+
+/*void Example7::DrawSphereInstance(float radius, int slices, int stacks, float instances)
+{
+    std::vector<GLfloat> vertices;
+    std::vector<GLuint> indices;
+
+    // Generar los vértices de la esfera
+    for (int stack = 0; stack <= stacks; ++stack) {
+        float phi = M_PI * stack / stacks;  // Coordenada en el eje vertical (latitud)
+        float y = cos(phi);
+        float r = sin(phi);
+
+        for (int slice = 0; slice <= slices; ++slice) {
+            float theta = 2.0f * M_PI * slice / slices;  // Coordenada en el eje horizontal (longitud)
+            float x = r * cos(theta);
+            float z = r * sin(theta);
+
+            // Añadir los vértices escalados por el radio
+            vertices.push_back(x * radius);
+            vertices.push_back(y * radius);
+            vertices.push_back(z * radius);
+        }
+    }
+
+    // Generar los índices para los triángulos
+    for (int stack = 0; stack < stacks; ++stack) {
+        for (int slice = 0; slice < slices; ++slice) {
+            int first = (stack * (slices + 1)) + slice;
+            int second = first + slices + 1;
+
+            // Primer triángulo
+            indices.push_back(first);
+            indices.push_back(second);
+            indices.push_back(first + 1);
+
+            // Segundo triángulo
+            indices.push_back(second);
+            indices.push_back(second + 1);
+            indices.push_back(first + 1);
+        }
+    }
+
+    // Habilitar uso de arrays de vértices
+    glEnableClientState(GL_VERTEX_ARRAY);
+    glVertexPointer(3, GL_FLOAT, 0, vertices.data());
+    glDrawElementsInstanced(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, indices.data(), instances);
+    glDisableClientState(GL_VERTEX_ARRAY);
+    glutSwapBuffers();
+}
+*/
+
+/*void Example7::DrawSquareInstance(float instances)
+{
+    // Vértices del cuadrado (en el plano XY)
+    GLfloat vertices[] = {
+        -0.5f, -0.5f, 0.0f,  // Vértice inferior izquierdo
+         0.5f, -0.5f, 0.0f,  // Vértice inferior derecho
+         0.5f,  0.5f, 0.0f,  // Vértice superior derecho
+        -0.5f,  0.5f, 0.0f   // Vértice superior izquierdo
+    };
+
+    // Índices para formar dos triángulos que componen el cuadrado
+    GLuint indices[] = {
+        0, 1, 2,  // Primer triángulo
+        2, 3, 0   // Segundo triángulo
+    };
+
+    // Habilitar el uso de arrays de vértices
+    glEnableClientState(GL_VERTEX_ARRAY);
+    glVertexPointer(3, GL_FLOAT, 0, vertices);
+    glDrawElementsInstanced(GL_TRIANGLES, sizeof(indices) / sizeof(GLuint), GL_UNSIGNED_INT, indices, instances);
+    glDisableClientState(GL_VERTEX_ARRAY);
+    glutSwapBuffers();
 }
 */
 
